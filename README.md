@@ -29,11 +29,11 @@ https://medium.com/@andrejtaneski/hacking-flutters-hot-restart-for-web-developin
  >
  > flutter pub get
  >
- > # start a session that runs the flutter development web server # if non Unix add option --web-hostname 0.0.0.0 
+ > \# start a session that runs the flutter development web server # if non Unix add option --web-hostname 0.0.0.0 
  > tmux new-session -d -s flutterSession -n flutterWindow
  > tmux send-keys -t flutterSession:flutterWindow "flutter run -d web-server --web-port 8080" Enter
  >
- > # start a session that runs a filewatcher and sends the "R" key to the flutter session when files are changet - triggering a hot restart
+ > \# start a session that runs a filewatcher and sends the "R" key to the flutter session when files are changet - triggering a hot restart
  > tmux new-session -d -s watcherSession -n watcherWindow
  > tmux send-keys -t watcherSession:watcherWindow "while inotifywait -e close_write -r lib/; do tmux send-keys -t flutterSession:flutterWindow "R" Enter; done" Enter
  >
