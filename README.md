@@ -44,13 +44,13 @@ https://medium.com/@andrejtaneski/hacking-flutters-hot-restart-for-web-developin
  > rm -f /tmp/tmuxpipe && mkfifo /tmp/tmuxpipe && tmux pipe-pane -t flutterSession:flutterWindow -o 'cat >> /tmp/tmuxpipe' && cat /tmp/tmuxpipe
 4. Add compose.yml file as described:
  > services:
- > + app:
- > ++ image: flutter-dev
- > ++ build: .
- > ++ volumes:
- > +++ - ./:/app
- > ++ ports:
- > +++ - 8080:8080
+   > app:
+     > image: flutter-dev
+     > build: .
+     > volumes:
+       > - ./:/app
+     > ports:
+       > - 8080:8080
 5. Open terminal, go to your app root, and execute:
  > docker compose up
 
